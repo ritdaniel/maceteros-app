@@ -1,5 +1,28 @@
+import React, { Component } from "react";
 
 export function ItemDetail({product,AddToCart}) {
+const[cantidad,setCantidad]= React.useState(1);
+const[alertmax,setAlertmax]= React.useState();
+
+
+function sumar(e){
+  if(cantidad<product.producto.stock){
+  setCantidad(cantidad + 1);
+  
+  }
+  else{
+    setAlertmax("Cantidad maxima Disponible");
+  }
+  return 
+}
+
+function restar(e){
+  if (cantidad>1){
+  setCantidad(cantidad - 1);}
+  setAlertmax("");
+  return
+}
+
      return (
  
       <section className="productosDetail">
@@ -11,27 +34,24 @@ export function ItemDetail({product,AddToCart}) {
         />
        </div>
       <div className="contenidoInfoDetail">
+      <h6 className="fontcarroid">Codigo: {product.producto.sku}</h6><br/>
         <h6 className="fontCategoria">Categoria: {product.producto.categoria}</h6>
-        <h6 className="fontNombre">Nombre: {product.producto.nombre}</h6>
-        <h6 className="fontDescripcion">Descripcion: {product.producto.descripcion}</h6><br/>
-        <h6 className="fontcarroid">Codigo: {product.producto.sku}</h6><br/>
-        <h3 className = "cajaProductos__text--grey" > Stock Disponible { product.producto.stock } </h3>
+        <h5 className="fontNombre">Nombre: {product.producto.nombre}</h5>
+        <h6 className="fontDescripcion">Medida: {product.producto.medida}</h6>
+        <h6 className="fontDescripcion">Color: {product.producto.color}</h6>
+        <h6 className="fontDescripcion">Descripcion: {product.producto.descripcion}</h6><br/><br/><br/>
+        <h6 className = "fontCategoria" > Stock Disponible { product.producto.stock } </h6>
     </div>
        <div className="contenidoCantDetail">
-       <button className = "restar" size={3}> - </button>
-       <input 
-       size={2}></input>
-       <button className = "sumar" size={3}> + </button>
-       <p className = "precio" > $ { product.producto.precio }. - </p>  
-       <button className = "btn btn-danger btn-sm" onClick={()=>AddToCart(product.producto.precio)}> Agregar Carro </button><br/>
+       <h6 className="fontcarroid Mi">Cantidad</h6>
+          <button className = "restar btn-sm MI" onClick = {restar } > - </button> 
+          <label className="centrar" >{cantidad}</label> 
+           <button  className = "sumar btn-sm" onClick = {sumar } > + </button>
+         <br/>
+         <p>{alertmax}</p> <br/><br/><br/><br/>
+       <p className = "preciodet MI" > $ {cantidad * product.producto.precio}. - </p>  
+       <button className = "btn btn-danger btn-sm" > Agregar Carro </button><br/>
        </div>
-      
-
-
-
-
-
-
   </section>
     
     )
@@ -39,67 +59,5 @@ export function ItemDetail({product,AddToCart}) {
 
 
 
-
-
-
-
-
-
-
-
  
-//   <h1 className = "cajaProductos__title--orange" >{ product.nombre }  </h1>
-//   <h3 className = "cajaProductos__text--grey" > { product.producto.descripcion }</h3>  
- 
-//   <p className = "precio" > $ { product.producto.precio }. - </p>  
-//   <button className = "btn btn-danger btn-sm"> Agregar Carro </button><br/>
-//   <h3 className = "cajaProductos__text--grey" > Stock Disponible { product.stock } </h3>
-//   </div>
-//  </section >
-
-
-
-
-
-     
-
-  //    <div className="flex h-[400px]">
-  //    <div className="relative w-1/2 bg-gray-100">
-  //      <div className="absolute flex flex-col items-start z-10">
-  //        <div className="text-3xl font-bold p-2 ">
-  //        {product.producto.nombre}
-  //        </div>
-  //        <div className="text-xl font-bold p-2 bg-gray-900 ">
-           
-  //        </div>
-  //      </div>
-  //      <img
-  //      src={product.producto.foto}
-  //        className="object-contain"
-  //        width="30%"
-  //      />
-  //    </div>
-  //    <div className="w-1/2 p-10">
-  //      <div className="text-4xl font-bold mb-4">{ product.producto.medida}</div>
-       
-  //    </div>
-  //  </div>
-
-
-
-
-
-
-
-
-
-// <section className = "productos" aling="center" >         
-// <h1 className = "cajaProductos__title--orange" >{ product.nombre }  </h1>
-// <img
-// src = { product.foto }
-// alt = { product.descripcion }/> 
-// <h3 className = "cajaProductos__text--grey" > { product.descripcion }</h3>  
-// <p className = "precio" > $ { product.precio }. - </p>  
-// <button className = "btn btn-danger btn-sm" > Agregar Carro </button><br/>
-// <h3 className = "cajaProductos__text--grey" > Stock Disponible { product.stock } </h3>
-// </section >
+  

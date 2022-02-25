@@ -1,4 +1,5 @@
 import { getFirestore} from './connection'
+import { collection, query, where, getDocs } from "firebase/firestore";
 
  function documentToProduct(document){
     return{
@@ -24,8 +25,8 @@ export async function getAllProducts (){
       }
     
     export async function getProductByCategory(categoryId){
-      const database = getFirestore()
-      const snapshot = await database.collection("productos").where("categoryId","==", categoryId).get()
+      const db = getFirestore()
+      const snapshot = await db.collection('productos').where('categoryId','==', categoryId).get()
       const productos = snapshot.docs.map(documentToProduct)
       console.log(categoryId)
       return productos

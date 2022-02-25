@@ -24,9 +24,9 @@ export function NavBar(){
                     {categories.map((category) => {
                             return (
                          <NavLink
-                             key={category.name}
+                             key={category.id}
                                 className="nav-link  aria-current=page "
-                                to={category.id === 'all' ? '/' : `/categoria/${category.id}`}>
+                                to={`/categoria/${category.id}`}>
                      <h5 className="nav-link" aria-current="page"> {category.name}</h5>
                    </NavLink>
             )

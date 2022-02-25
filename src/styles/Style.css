@@ -73,6 +73,15 @@ select {
     margin-top: 1px;
     padding: 1px;
 }
+.preciodet {
+
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: red;
+    margin-top: 1px;
+    padding: 1px;
+}
 
 .restar {
     font-weight: bold;
@@ -325,6 +334,25 @@ select {
     color: #f9f7fc;
 }
 
+label {
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 15%;
+  }
+
+  .MI{
+      margin-left: 10%;
+  }
+
+  .centrar {
+    background-color: rgb(236, 236, 226);
+    padding: 3px;
+    margin: 0 auto;
+    text-align: center
+  }
+
 .navbar {
     background: linear-gradient(to bottom, #ff6600, rgba(224, 158, 34, 0.808));
 }
@@ -466,10 +494,9 @@ color: #f71b13;
 }
 
 .productosDetail {
-    
+    height: 80%;
     border: #ffb347 2px solid;
     margin: 5px;
-    align-items: center;
     justify-content: top;
     display: flex;
     flex-direction: row;
@@ -531,9 +558,9 @@ form {
     border: 1px double #313131;
 }
 .imgDetalle {
-    width: 95%;
+    width: 98%;
     border-radius: 1px;
-    margin: 5%;
+    margin: 2%;
     border: 1px double #313131;
 }
 
@@ -686,7 +713,7 @@ form {
         margin: 2px;
     }
     .contenidoImgDetail {
-        width: 30%;
+        width: 28%;
         margin: 1px;
     }
     .contenidoInfo {
@@ -696,7 +723,7 @@ form {
         padding-top: 1%;
     }
     .contenidoInfoDetail {
-       
+        width: 45%;
         float: left;
         margin: 3px;
         margin-left: 20px;
@@ -713,7 +740,7 @@ form {
 
     .contenidoCantDetail {
         align-items: center;
-        width: 15%;
+        width: 25%;
         float: left;
         margin: 3px;
         padding-top: 4%;
