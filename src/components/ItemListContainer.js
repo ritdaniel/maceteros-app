@@ -6,7 +6,6 @@ function getProducts(query) {
 
     const categoryId = query
     if (categoryId) {
-      console.log("llego a categoria")
       return getProductByCategory(categoryId)
     } else {
       return getAllProducts()
@@ -32,7 +31,6 @@ export function ItemListContainer({query}) {
               }
     fn()
   }, [query])
-
 
   return  isLoading ?null:<ItemList products={products} />
 

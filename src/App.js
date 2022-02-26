@@ -1,4 +1,5 @@
 import {BrowserRouter,Switch, Route} from 'react-router-dom'
+
 import './styles/Style.css'
 import { NavBar,Footer} from './components'
 import HomePage from './pages/home'
@@ -10,7 +11,7 @@ import PageCar from './pages/car'
 function App () {
   return (
     <BrowserRouter>
-<div className = "app" >
+<div className = "App" >
     < header  >
        <NavBar/>
     </header >

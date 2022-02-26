@@ -17,8 +17,10 @@ const ClearCart=(id)=>{
   console.log(id)
 }
 return(
-
+<div>
+<h1 className="titulo">Carro Compras</h1>
 <div className="mostrandoCarro cajaProductos">
+ 
       <div className="contenidoImg">
         <img
         className="imgCarro"
@@ -35,6 +37,10 @@ return(
        </div>
       </div>
   </div>
+  </div>
+  
+  
+
   
   )
 }
